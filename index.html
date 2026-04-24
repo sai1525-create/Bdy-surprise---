@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Birthday Surprise 🎉</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 50px;
+  transition: 0.5s;
+}
+
+/* अलग-अलग backgrounds */
+#page1 { background: linear-gradient(to right, #ff758c, #ff7eb3); }
+#page2 { background: linear-gradient(to right, #36d1dc, #5b86e5); }
+#page3 { background: linear-gradient(to right, #f7971e, #ffd200); }
+#page4 { background: linear-gradient(to right, #8e2de2, #4a00e0); }
+
+.page { display: none; }
+.active { display: block; }
+
+button {
+  padding: 12px 25px;
+  margin: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.yes { background: #4CAF50; color: white; }
+.no { background: #f44336; color: white; }
+</style>
+</head>
+
+<body>
+
+<!-- 🎵 Music -->
+<audio autoplay loop>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Page 1 -->
+<div id="page1" class="page active">
+  <h1>🎉 Happy Birthday Anshika 🎉</h1>
+  <p>
+    I wish you endless happiness, success and smiles 😊💖 <br><br>
+    May your life be filled with love, laughter and dreams ✨ <br><br>
+    Stay happy and keep shining always 🌟
+  </p>
+  <button onclick="nextPage(2)">Next ➡️</button>
+</div>
+
+<!-- Page 2 -->
+<div id="page2" class="page">
+  <h2>😄 Quick Question</h2>
+  <p>Did this surprise make you smile? 😊</p>
+
+  <button class="yes" onclick="nextPage(3)">Yes 😄</button>
+  <button class="no" id="noBtn">No 😆</button>
+</div>
+
+<!-- Page 3 -->
+<div id="page3" class="page">
+  <h2>😏 One more question...</h2>
+  <p>Future me kabhi comeback possible hai kya? 😜</p>
+
+  <button class="yes" onclick="nextPage(4)">Yes 😄</button>
+  <button class="no" id="noBtn2">No 🙈</button>
+</div>
+
+<!-- Page 4 -->
+<div id="page4" class="page">
+  <h1>🎂 Surprise 🎂</h1>
+
+  <p>
+    एक बात पता है आपको? 😉 <br><br>
+    आपने teenage cross कर लिया 😄 <br>
+    Welcome to your 20s 🎉💖
+  </p>
+
+  <h2>Forever ♾️ Love 💖</h2>
+
+  <h1>🎂🕯️🕯️🕯️🕯️🕯️🕯️🕯️🕯️🕯️🕯️🕯️🕯️🕯️🕯️🕯️🕯️🕯️🕯️🕯️🕯️</h1>
+</div>
+
+<script>
+function nextPage(page) {
+  document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+  document.getElementById("page" + page).classList.add("active");
+}
+
+// No button 1 भागे
+const noBtn = document.getElementById("noBtn");
+noBtn.addEventListener("mouseover", function() {
+  const x = Math.random() * (window.innerWidth - 100);
+  const y = Math.random() * (window.innerHeight - 50);
+  noBtn.style.position = "absolute";
+  noBtn.style.left = x + "px";
+  noBtn.style.top = y + "px";
+});
+
+// No button 2 भागे
+const noBtn2 = document.getElementById("noBtn2");
+noBtn2.addEventListener("mouseover", function() {
+  const x = Math.random() * (window.innerWidth - 100);
+  const y = Math.random() * (window.innerHeight - 50);
+  noBtn2.style.position = "absolute";
+  noBtn2.style.left = x + "px";
+  noBtn2.style.top = y + "px";
+});
+</script>
+
+</body>
+</html>
